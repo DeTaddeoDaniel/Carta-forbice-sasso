@@ -9,7 +9,8 @@
 }
 
 body{
-    min-height: 100vh;
+    margin: 0;
+    height: 100vh;
     font-family: 'Barlow Semi Condensed', sans-serif;
     background-color: peru;
     background: radial-gradient(circle at 50% 10%, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
@@ -17,9 +18,15 @@ body{
 
 .container{
     width: 100%;
+    height: 100%;
     max-width: 375px;
     margin-right: auto;
     margin-left: auto;
+    padding-top: 10px;
+    border-left: 1px solid var(--header-outline);
+    border-right: 1px solid var(--header-outline);
+    padding-left: 10px;
+     padding-right: 10px;
 }
 
 header{
@@ -71,9 +78,10 @@ h1{
     padding: 5px 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    transform: translate(-50%,-50%);
 }
 
 .btn-circle{
@@ -116,7 +124,8 @@ h1{
 
 }
 
-main{
+.wrap{
+    height: 100%;
     padding-top: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -129,7 +138,7 @@ main{
     position: relative;
 }
 
-main::after{
+.wrap::after{
     content: '';
     background-image: url('images/bg-triangle.svg');
     background-repeat: no-repeat;
