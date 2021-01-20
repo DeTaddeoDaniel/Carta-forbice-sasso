@@ -61,4 +61,17 @@ h1{
     font-size:4rem
 }
 
-
+.btn-rules{
+    border: 2px solid var(--header-outline);
+    border-radius: 10px;
+    background-color:transparent;
+    color: #fff;
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
