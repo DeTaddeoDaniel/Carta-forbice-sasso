@@ -52,6 +52,25 @@ function checkWinner(choise) {
 }
 
 function step1() {
+
+    console.log('-- step 1 --');
+
+    // img src change
+    let andressImg = 'images/icon-'+choise+'.svg';
+    console.log(andressImg)
+    $('.selection img').attr('src',andressImg)
+    
+    // remove class older 
+    let cl = 'btn-'+ $('.selection button').attr('data-choise');
+    console.log('removeClass: '+cl);
+    $('.selection div:first-child button').removeClass(cl);
+
+    // add new class
+    let cv = 'btn-'+choise;
+    console.log('addClass: '+cv);
+    $('.selection div:first-child button').addClass(cv);
+  
+    // cambia display elementi
     $('.wrap').hide();
     $('.selection').show();
 }
