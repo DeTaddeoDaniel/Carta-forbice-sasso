@@ -32,9 +32,6 @@ function checkWinner(choise) {
     console.log('-- check winner --');
     
     console.log('choise user: '+ choise)
-    
-    choisePc = RandomChoisePc()
-    console.log('choise pc: '+choisePc)
 
     if(choise == choisePc){
         console.log('winner round: nobody')
@@ -69,10 +66,37 @@ function step1() {
     let cv = 'btn-'+choise;
     console.log('addClass: '+cv);
     $('.selection div:first-child button').addClass(cv);
-  
+    
+    // change data-choise
+    $('.selection button').attr('data-choise', choise);
+
     // cambia display elementi
     $('.wrap').hide();
     $('.selection').show();
+
+    setTimeout(step2() , 3000);
+}
+
+function step2 (){
+    console.log('-- step 2 --');
+
+    // scelta cpu 
+    choisePc = RandomChoisePc()
+    console.log('choise pc: '+choisePc)
+
+    // add img to html
+    $('.div-nothing .imageContain').append(document.createElement('img'));
+
+    // imposta img
+    let andressImg = 'images/icon-'+choisePc+'.svg'
+    console.log(andressImg)
+    $('.div-nothing .imageContain img').attr('src', andressImg);
+    $('.div-nothing .imageContain img').attr('alt',choisePc)
+
+    // imposta button
+    let classeNew = 'btn-'+choisePc
+     $('.div-nothing button').addClass(classeNew)
+     $('.div-nothing button').removeClass('btn-nothing')
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -95,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
             })
 
             step1();
-            checkWinner(choise)
         })
     });
 })
