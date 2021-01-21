@@ -12,18 +12,6 @@
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-  <!-- Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again -->
-
-
 </head>
 <body>
 
@@ -69,7 +57,7 @@
 
     <div class="selection">
 
-      <div>
+      <div class="userChoise">
         <h2>You picked</h2>
         <button class="btn-circle btn-paper" data-choise="paper">
           <div class="imageContain">
@@ -77,9 +65,14 @@
           </div>
       </div>
 
+      <div class="result">
+        <h2><span id="win"></span></h2>
+        <button class="btn-again">Play again</button>
+      </div>
+
       <div class="div-nothing">
         <h2>Cpu picker</h2>
-        <button class="btn-circle btn-nothing" data-choise='rock' >
+        <button class="btn-circle btn-nothing">
           <div class="imageContain"></div>
         </button>
       </div>
