@@ -16,6 +16,14 @@ console.log(winner)
 const scoreHtml = document.getElementById('score');
 let score = 0;
 
+function gameRestart() {
+    const buttonChoise = document.querySelectorAll('main .btn-circle')
+    let choise = undefined;
+    let choisePc = undefined;
+    let winner = '';
+    let score = 0;
+}
+
 function RandomChoisePc() {
     console.log('-- random choise --');
     var index = Math.floor(Math.random() * (choises.length - 0) ) + 0;
@@ -131,26 +139,54 @@ function step3() {
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('-- document ready --');
+    $('#btn-again').click(function (e) { 
+        console.log('-- btn play again --')
+        e.preventDefault();
+        gameRestart();
+        initGame();
+    });
+
+    $('button.btn-rules').click(function (e) { 
+        console.log('-- btn rules --')
+        $('.rules').show(500);
+    });
+
+    $('p.closeRules').click(function (e) { 
+        console.log('-- btn close rules --')
+        $('.rules').hide(500);
+    });
+
+    initGame()
+})
+
+function initGame() {
+
+    $('.wrap').show();
     $('.selection').hide();
     $('.selection .result').hide();
+
+    // add img to html
+    $('.div-nothing .imageContain').empty();
+
+    // imposta button
+    $('.div-nothing button').removeClass()
+    $('.div-nothing button').addClass('btn-circle btn-nothing')
 
     buttonChoise.forEach(button => {
         
         console.log('-- active button '+ button.getAttribute('data-choise') +' --');
-        button.addEventListener('click', function f1() {
+       $(button).click('click', () => {
             
             choise = button.getAttribute('data-choise');
             console.log(choise);
 
             $('.winner').removeClass('winner');
+            step1()
             
-            buttonChoise.forEach( (button) => {
-                console.log('-- remove button '+ button.getAttribute('data-choise') +' --');
-                button.removeEventListener('click',f1 )
-            })
+            // buttonChoise.forEach( (button) => {
+            //     console.log('-- remove button '+ button.getAttribute('data-choise') +' --');
+            // })
 
-            $('.selection').hide(1000);
-            $('main').delay(1000).show(2000, step1());
         })
     });
-})
+}

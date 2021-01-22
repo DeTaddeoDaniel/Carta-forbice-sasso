@@ -252,7 +252,108 @@ h1{
     position: relative;
     z-index: 1;
 }
-/* <div class="result">
-        <h2>You <span>win</span></h2>
-        <button class="btn-again">Play again</button>
-      </div> */
+
+.rules{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(25, 25, 25, 0.5);
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-rules{
+    position: absolute;
+    background-color: rgba(88, 65, 192, 0.233);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #252525;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.rules .header .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+}
+
+.rules .header h3{
+    font-size: 30px;
+    margin: 0;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+.rules .header p{
+    font-size: 15px;
+    margin: 0;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.rules .content {
+    font-size: 15px;
+    margin: 0;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.5);
+    padding-right: 10px;
+    user-select: none;
+}
+
+.rules .content img{
+    user-select: none;
+}
+
+@media (max-width: 400px){
+    .rules{
+        background-color: rgba(25, 25, 25, 1);
+    }
+
+    .content-rules{
+        background-color: rgba(55, 55, 55, .3);
+        padding: 5px;
+        width: 100%;
+    }
+
+    .rules .header{
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    .rules .header .content{
+        width: 100%;
+        padding-bottom: 5px;
+    }
+
+    .rules .header h3{
+        font-size: 15px;
+    }
+
+    .rules .header p{
+        font-size: 10px;
+        padding-right: 5px;
+    }
+
+    .rules .content {
+        font-size: 15px;
+    }
+
+    .rules .content{
+        max-width: 100%;
+    }
+
+    .rules .content img{
+        max-width: 100%;
+    }
+}
