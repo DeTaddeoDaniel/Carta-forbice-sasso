@@ -164,8 +164,9 @@ function initGame() {
     $('.wrap').show();
     $('.selection').hide();
     $('.selection .result').hide();
+    $('.rules').hide();
 
-    // add img to html
+    // remove img to html
     $('.div-nothing .imageContain').empty();
 
     // imposta button
@@ -183,9 +184,10 @@ function initGame() {
             $('.winner').removeClass('winner');
             step1()
             
-            // buttonChoise.forEach( (button) => {
-            //     console.log('-- remove button '+ button.getAttribute('data-choise') +' --');
-            // })
+            buttonChoise.forEach( (button) => {
+                console.log('-- remove button '+ button.getAttribute('data-choise') +' --');
+                $(button).off('click')
+            })
 
         })
     });
